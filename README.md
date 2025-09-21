@@ -13,6 +13,8 @@ A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft
   - Colorful particle trails following flying arrows.
   - Settings: Rainbow mode, RGB speed, fixed color, particles per tick, particle size, only own arrows, offset spread, minimum speed.
 
+- more comming soon
+
 ## Download
 
 - Download the built JAR from the repository __Releases__.
