@@ -3,7 +3,8 @@
 	"package": "xyz.datenflieger.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"BrandClientBrandRetrieverMixin",
+		"ArrowEntityTickMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

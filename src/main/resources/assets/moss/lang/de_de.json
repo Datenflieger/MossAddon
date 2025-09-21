@@ -1,0 +1,18 @@
+{
+  "module_categories.mossaddon": "Moss Addon",
+  "modules.brand_name_changer.name": "Brandnamen-Änderer",
+  "modules.brand_name_changer.description": "Überschreibt den Client-Brand-String, der an Server gesendet wird.",
+  "modules.brand_name_changer.brand": "Brand",
+  "modules.brand_name_changer.settings.brand.name": "Brand",
+  "modules.arrow_trails.name": "Pfeilspuren",
+  "modules.arrow_trails.description": "Erzeugt bunte Partikel entlang fliegender Pfeile.",
+  "modules.arrow_trails.groups.visual": "Optik",
+  "modules.arrow_trails.settings.rainbow.name": "Regenbogen",
+  "modules.arrow_trails.settings.rgbSpeed.name": "RGB-Geschwindigkeit",
+  "modules.arrow_trails.settings.particleDensity.name": "Partikel pro Tick",
+  "modules.arrow_trails.settings.particleSize10.name": "Partikelgröße",
+  "modules.arrow_trails.settings.color.name": "Farbe",
+  "modules.arrow_trails.settings.ownOnly.name": "Nur eigene Pfeile",
+  "modules.arrow_trails.settings.offsetSpread1000.name": "Versatz-Streuung",
+  "modules.arrow_trails.settings.minSpeed100.name": "Mindestgeschwindigkeit"
+}

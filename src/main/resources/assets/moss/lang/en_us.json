@@ -1,0 +1,18 @@
+{
+  "module_categories.mossaddon": "Moss Addon",
+  "modules.brand_name_changer.name": "Brand Name Changer",
+  "modules.brand_name_changer.description": "Override the client brand string sent to servers. Ex. 'lunarclient', 'fabric', 'forge', 'vanilla'",
+  "modules.brand_name_changer.brand": "Brand",
+  "modules.brand_name_changer.settings.brand.name": "Brand",
+  "modules.arrow_trails.name": "Arrow Trails",
+  "modules.arrow_trails.description": "Spawns colorful particles along flying arrows.",
+  "modules.arrow_trails.groups.visual": "Visual",
+  "modules.arrow_trails.settings.rainbow.name": "Rainbow",
+  "modules.arrow_trails.settings.rgbSpeed.name": "RGB speed",
+  "modules.arrow_trails.settings.particleDensity.name": "Particles per tick",
+  "modules.arrow_trails.settings.particleSize10.name": "Particle size",
+  "modules.arrow_trails.settings.color.name": "Color",
+  "modules.arrow_trails.settings.ownOnly.name": "Only own arrows",
+  "modules.arrow_trails.settings.offsetSpread1000.name": "Offset spread",
+  "modules.arrow_trails.settings.minSpeed100.name": "Minimum speed"
+}
