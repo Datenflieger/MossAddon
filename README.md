@@ -1,6 +1,6 @@
 ![Banner](https://i.imgur.com/lEsZNHy.jpeg)
 
-A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft 1.21.1. It adds a new category and extra utility/visual modules.
+A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft 1.21.10. It adds a new category and extra utility/visual modules.
 
 ## Features
 
@@ -13,6 +13,8 @@ A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft
   - Colorful particle trails following flying arrows.
   - Settings: Rainbow mode, RGB speed, fixed color, particles per tick, particle size, only own arrows, offset spread, minimum speed.
 
+- __Damage Indicator__
+  - Nice Damage Indicator
 - more comming soon
 
 ## Download
@@ -22,15 +24,15 @@ A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft
 
 ## Prerequisites
 
-- Minecraft: 1.21.1
+- Minecraft: 1.21.10
 - Fabric Loader
-- Fabric API (matching Minecraft 1.21.1)
+- Fabric API (matching Minecraft 1.21.10)
 - Cactus Mod
 
 ## Installation
 
 1. Install Fabric Loader (if you don't have it yet).
-2. Install Fabric API (matching Minecraft 1.21.1).
+2. Install Fabric API (matching Minecraft 1.21.10).
 3. Install Cactus Mod.
 4. Download the __Moss Addon__ JAR from the repository __Releases__.
 5. Put all JARs into your `mods/` folder.
