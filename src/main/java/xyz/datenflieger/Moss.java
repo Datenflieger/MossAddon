@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.datenflieger.modules.BrandNameChanger;
 import xyz.datenflieger.modules.ArrowTrails;
+import xyz.datenflieger.modules.DamageIndicator;
 
 public class Moss implements ICactusAddon {
 	public static final String MOD_ID = "moss";
@@ -27,5 +28,6 @@ public class Moss implements ICactusAddon {
 		// Register our module inside the custom category
 		bus.register(com.dwarslooper.cactus.client.feature.module.Module.class, ctx -> new BrandNameChanger(MOSS_ADDON_CATEGORY));
 		bus.register(com.dwarslooper.cactus.client.feature.module.Module.class, ctx -> new ArrowTrails(MOSS_ADDON_CATEGORY));
+		bus.register(com.dwarslooper.cactus.client.feature.module.Module.class, ctx -> new DamageIndicator(MOSS_ADDON_CATEGORY));
 	}
 }

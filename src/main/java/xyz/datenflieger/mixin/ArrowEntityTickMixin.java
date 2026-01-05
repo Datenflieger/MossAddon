@@ -1,7 +1,12 @@
 package xyz.datenflieger.mixin;
 
+import java.awt.Color;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.particle.DustParticleEffect;
+import net.minecraft.util.math.ColorHelper;
 import net.minecraft.world.World;
 import org.joml.Vector3f;
 import org.spongepowered.asm.mixin.Mixin;
@@ -9,9 +14,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import xyz.datenflieger.modules.ArrowTrails;
-
-import java.awt.Color;
-import net.minecraft.client.MinecraftClient;
 
 @Mixin(ArrowEntity.class)
 public abstract class ArrowEntityTickMixin {
@@ -22,8 +24,8 @@ public abstract class ArrowEntityTickMixin {
         if (module == null || !module.active()) return;
 
         ArrowEntity arrow = (ArrowEntity) (Object) this;
-        World world = arrow.getWorld();
-        if (!world.isClient) return;
+        World world = arrow.getEntityWorld();
+        if (!world.isClient()) return;
 
         if ((Boolean) module.ownOnly.get() && arrow.getOwner() != null && MinecraftClient.getInstance().player != null) {
             if (arrow.getOwner().getId() != MinecraftClient.getInstance().player.getId()) {
@@ -47,7 +49,12 @@ public abstract class ArrowEntityTickMixin {
         }
 
         Vector3f vec = new Vector3f(rgb.getRed() / 255.0f, rgb.getGreen() / 255.0f, rgb.getBlue() / 255.0f);
-        DustParticleEffect effect = new DustParticleEffect(vec, size);
+        int packedColor = ColorHelper.getArgb(
+            (int)(vec.x * 255.0f),
+            (int)(vec.y * 255.0f),
+            (int)(vec.z * 255.0f)
+        );
+        DustParticleEffect effect = new DustParticleEffect(packedColor, size);
 
         int density = (Integer) module.particleDensity.get();
         double spread = ((Integer) module.offsetSpread1000.get()) / 1000.0;
@@ -55,7 +62,15 @@ public abstract class ArrowEntityTickMixin {
             double xOffset = (world.random.nextDouble() - 0.5) * spread;
             double yOffset = (world.random.nextDouble() - 0.5) * spread;
             double zOffset = (world.random.nextDouble() - 0.5) * spread;
-            world.addParticle(effect, arrow.getX() + xOffset, arrow.getY() + yOffset, arrow.getZ() + zOffset, 0.0D, 0.0D, 0.0D);
+            world.addParticleClient(
+                effect,
+                arrow.getX() + xOffset,
+                arrow.getY() + yOffset,
+                arrow.getZ() + zOffset,
+                0.0D,
+                0.0D,
+                0.0D
+            );
         }
     }
 }

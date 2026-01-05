@@ -1,9 +1,9 @@
 {
   "module_categories.mossaddon": "Moss Addon",
-  "modules.brand_name_changer.name": "Brand Name Changer",
-  "modules.brand_name_changer.description": "Override the client brand string sent to servers. Ex. 'lunarclient', 'fabric', 'forge', 'vanilla'",
-  "modules.brand_name_changer.brand": "Brand",
-  "modules.brand_name_changer.settings.brand.name": "Brand",
+  "modules.brand_name.name": "Brand Name",
+  "modules.brand_name.description": "Override the client brand string sent to servers. Ex. 'lunarclient', 'fabric', 'forge', 'vanilla'",
+  "modules.brand_name.brand": "Brand",
+  "modules.brand_name.settings.brand.name": "Brand",
   "modules.arrow_trails.name": "Arrow Trails",
   "modules.arrow_trails.description": "Spawns colorful particles along flying arrows.",
   "modules.arrow_trails.groups.visual": "Visual",
@@ -14,5 +14,13 @@
   "modules.arrow_trails.settings.color.name": "Color",
   "modules.arrow_trails.settings.ownOnly.name": "Only own arrows",
   "modules.arrow_trails.settings.offsetSpread1000.name": "Offset spread",
-  "modules.arrow_trails.settings.minSpeed100.name": "Minimum speed"
+  "modules.arrow_trails.settings.minSpeed100.name": "Minimum speed",
+
+  "modules.damage_indicator.name": "Damage Indicator",
+  "modules.damage_indicator.description": "Shows health above entities (hearts, amount or percent).",
+  "modules.damage_indicator.settings.includeAbsorption.name": "Include absorption",
+  "modules.damage_indicator.settings.displayType.name": "Display type",
+  "modules.damage_indicator.settings.displayType.HEARTS": "Hearts",
+  "modules.damage_indicator.settings.displayType.AMOUNT": "Amount",
+  "modules.damage_indicator.settings.displayType.PERCENT": "Percent"
 }

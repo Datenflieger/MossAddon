@@ -4,7 +4,11 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"BrandClientBrandRetrieverMixin",
-		"ArrowEntityTickMixin"
+		"ArrowEntityTickMixin",
+		"LivingEntityRenderStateMixin",
+		"DamageIndicatorEntityRendererMixin",
+		"DamageIndicatorLivingEntityRendererMixin",
+		"DamageIndicatorPlayerRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

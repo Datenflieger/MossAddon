@@ -11,7 +11,7 @@ public class BrandNameChanger extends Module {
     public final Setting<String> brandName;
 
     public BrandNameChanger(Category category) {
-        super("brand_name_changer", category, new Module.Options().set(Module.Flag.RUN_IN_MENU, true).set(Module.Flag.HUD_LISTED, false));
+        super("brand_name", category, new Module.Options().set(Module.Flag.RUN_IN_MENU, true).set(Module.Flag.HUD_LISTED, false));
         INSTANCE = this;
         this.brandName = this.mainGroup.add(new StringSetting("brand", "moss"));
     }
