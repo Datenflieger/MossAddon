@@ -46,19 +46,6 @@ A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft
    - __Brand Name Changer__: enable and set your desired value in the "Brand" field.
    - __Arrow Trails__: enable and adjust the settings to your liking.
 
----
-
-## For advanced users / technical
-
-- Built with Fabric and Java 21.
-- Cactus addon entrypoint: `xyz.datenflieger.Moss` (implements `ICactusAddon`).
-- Mixins: `BrandClientBrandRetrieverMixin` (client brand), `ArrowEntityTickMixin` (arrow particles).
-- Build locally:
-  ```bash
-  ./gradlew build
-  ```
-  The built JAR will be under `build/libs/`.
-
 ## License
 
 This project is licensed under the terms of the license file included in this repository (`LICENSE`).
