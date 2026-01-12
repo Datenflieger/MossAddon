@@ -1,6 +1,6 @@
 ![Banner](https://i.imgur.com/lEsZNHy.jpeg)
 
-A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft 1.21.10. It adds a new category and extra utility/visual modules.
+A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft 1.21.11. It adds a new category and extra utility/visual modules.
 
 ## Features
 
@@ -24,15 +24,15 @@ A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft
 
 ## Prerequisites
 
-- Minecraft: 1.21.10
+- Minecraft: 1.21.11
 - Fabric Loader
-- Fabric API (matching Minecraft 1.21.10)
+- Fabric API (matching Minecraft 1.21.11)
 - Cactus Mod
 
 ## Installation
 
 1. Install Fabric Loader (if you don't have it yet).
-2. Install Fabric API (matching Minecraft 1.21.10).
+2. Install Fabric API (matching Minecraft 1.21.11).
 3. Install Cactus Mod.
 4. Download the __Moss Addon__ JAR from the repository __Releases__.
 5. Put all JARs into your `mods/` folder.
@@ -42,9 +42,7 @@ A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft
 
 1. Open the Cactus Mod modules UI.
 2. Switch to the __Moss Addon__ category.
-3. Enable what you want:
-   - __Brand Name Changer__: enable and set your desired value in the "Brand" field.
-   - __Arrow Trails__: enable and adjust the settings to your liking.
+3. Enable what you want
 
 ## License
 
