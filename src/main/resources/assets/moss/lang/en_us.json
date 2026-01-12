@@ -18,9 +18,12 @@
 
   "modules.damage_indicator.name": "Damage Indicator",
   "modules.damage_indicator.description": "Shows health above entities (hearts, amount or percent).",
+  "modules.damage_indicator.groups.general": "General",
   "modules.damage_indicator.settings.includeAbsorption.name": "Include absorption",
+  "modules.damage_indicator.settings.includePlayers.name": "Include players",
+  "modules.damage_indicator.settings.includeOtherEntities.name": "Include other entities",
   "modules.damage_indicator.settings.displayType.name": "Display type",
-  "modules.damage_indicator.settings.displayType.HEARTS": "Hearts",
-  "modules.damage_indicator.settings.displayType.AMOUNT": "Amount",
-  "modules.damage_indicator.settings.displayType.PERCENT": "Percent"
+  "modules.damage_indicator.settings.displayType.hearts": "Hearts",
+  "modules.damage_indicator.settings.displayType.amount": "Amount",
+  "modules.damage_indicator.settings.displayType.percent": "Percent"
 }

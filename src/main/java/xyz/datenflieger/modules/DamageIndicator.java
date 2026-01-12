@@ -11,9 +11,9 @@ public class DamageIndicator extends Module {
 	public static DamageIndicator INSTANCE;
 
 	public enum DisplayType {
-		HEARTS,
-		AMOUNT,
-		PERCENT
+		Hearts,
+		Amount,
+		Percent
 	}
 
 	private final SettingGroup sgGeneral;
@@ -30,6 +30,6 @@ public class DamageIndicator extends Module {
 		this.includeAbsorption = this.sgGeneral.add(new BooleanSetting("includeAbsorption", true));
 		this.includePlayers = this.sgGeneral.add(new BooleanSetting("includePlayers", true));
 		this.includeOtherEntities = this.sgGeneral.add(new BooleanSetting("includeOtherEntities", true));
-		this.displayType = this.sgGeneral.add(new EnumSetting<>("displayType", DisplayType.HEARTS));
+		this.displayType = this.sgGeneral.add(new EnumSetting<>("displayType", DisplayType.Hearts));
 	}
 }

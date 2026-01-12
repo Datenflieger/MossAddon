@@ -54,9 +54,9 @@ public abstract class DamageIndicatorPlayerRendererMixin {
 		if (labelPos == null) return;
 
 		switch (module.displayType.get()) {
-			case HEARTS -> renderTexturedHearts(matrices, queue, labelPos, state, cameraState, health, absorption, maxHealth);
-			case AMOUNT -> renderTextLabel(matrices, queue, labelPos, state, cameraState, formatAmount(health, maxHealth, absorption));
-			case PERCENT -> renderTextLabel(matrices, queue, labelPos, state, cameraState, formatPercent(health, maxHealth));
+			case Hearts -> renderTexturedHearts(matrices, queue, labelPos, state, cameraState, health, absorption, maxHealth);
+			case Amount -> renderTextLabel(matrices, queue, labelPos, state, cameraState, formatAmount(health, maxHealth, absorption));
+			case Percent -> renderTextLabel(matrices, queue, labelPos, state, cameraState, formatPercent(health, maxHealth));
 		}
 	}
 

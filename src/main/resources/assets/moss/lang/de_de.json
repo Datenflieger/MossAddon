@@ -18,9 +18,12 @@
 
   "modules.damage_indicator.name": "Schadensanzeige",
   "modules.damage_indicator.description": "Zeigt Leben über Entitäten (Herzen, Anzahl oder Prozent).",
+  "modules.damage_indicator.groups.general": "Allgemein",
   "modules.damage_indicator.settings.includeAbsorption.name": "Absorption einbeziehen",
+  "modules.damage_indicator.settings.includePlayers.name": "Spieler einbeziehen",
+  "modules.damage_indicator.settings.includeOtherEntities.name": "Andere Entitäten einbeziehen",
   "modules.damage_indicator.settings.displayType.name": "Anzeigetyp",
-  "modules.damage_indicator.settings.displayType.HEARTS": "Herzen",
-  "modules.damage_indicator.settings.displayType.AMOUNT": "Anzahl",
-  "modules.damage_indicator.settings.displayType.PERCENT": "Prozent"
+  "modules.damage_indicator.settings.displayType.hearts": "Herzen",
+  "modules.damage_indicator.settings.displayType.amount": "Anzahl",
+  "modules.damage_indicator.settings.displayType.percent": "Prozent"
 }
