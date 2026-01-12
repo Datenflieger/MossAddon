@@ -11,7 +11,7 @@ import xyz.datenflieger.modules.BrandNameChanger;
 public abstract class BrandClientBrandRetrieverMixin {
     @Inject(method = "getClientModName", at = @At("HEAD"), cancellable = true, remap = false)
     private static void moss$overrideBrand(CallbackInfoReturnable<String> cir) {
-        if (BrandNameChanger.INSTANCE != null) {
+        if (BrandNameChanger.INSTANCE != null && BrandNameChanger.INSTANCE.active()) {
             String custom = BrandNameChanger.INSTANCE.getCustomBrandOrNull();
             if (custom != null) {
                 cir.setReturnValue(custom);
