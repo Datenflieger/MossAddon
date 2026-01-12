@@ -1,9 +1,7 @@
 package xyz.datenflieger.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.LightmapTextureManager;
-import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.*;
 import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.client.render.entity.state.EntityRenderState;
@@ -34,7 +32,10 @@ public abstract class DamageIndicatorPlayerRendererMixin {
 	private static final SpriteIdentifier HEART_ABS_FULL = new SpriteIdentifier(GUI_ATLAS, Identifier.of("minecraft", "hud/heart/absorbing_full"));
 	private static final SpriteIdentifier HEART_ABS_HALF = new SpriteIdentifier(GUI_ATLAS, Identifier.of("minecraft", "hud/heart/absorbing_half"));
 
-	@Inject(method = "renderLabelIfPresent", at = @At("TAIL"))
+	@Inject(
+			method = "renderLabelIfPresent(Lnet/minecraft/client/render/entity/state/PlayerEntityRenderState;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/command/OrderedRenderCommandQueue;Lnet/minecraft/client/render/state/CameraRenderState;)V",
+			at = @At("TAIL")
+	)
 	private void moss$renderHealthLabel(PlayerEntityRenderState state, MatrixStack matrices, OrderedRenderCommandQueue queue, CameraRenderState cameraState, CallbackInfo ci) {
 		DamageIndicator module = DamageIndicator.INSTANCE;
 		if (module == null || !module.active()) return;
@@ -93,7 +94,7 @@ public abstract class DamageIndicatorPlayerRendererMixin {
 		boolean absHalf = (absorption % 2.0f) >= 1.0f;
 
 		var atlasManager = MinecraftClient.getInstance().getAtlasManager();
-		var layer = net.minecraft.client.render.RenderLayer.getEntityCutoutNoCull(GUI_ATLAS);
+		RenderLayer layer = RenderLayers.entityCutoutNoCull(GUI_ATLAS);
 
 		var containerSprite = atlasManager.getSprite(HEART_CONTAINER);
 		var fullSprite = atlasManager.getSprite(HEART_FULL);

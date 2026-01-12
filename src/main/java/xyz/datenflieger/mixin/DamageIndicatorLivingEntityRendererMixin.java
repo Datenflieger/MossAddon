@@ -1,9 +1,7 @@
 package xyz.datenflieger.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.LightmapTextureManager;
-import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.*;
 import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.state.EntityRenderState;
@@ -91,7 +89,7 @@ public abstract class DamageIndicatorLivingEntityRendererMixin<T extends net.min
 		boolean absHalf = (absorption % 2.0f) >= 1.0f;
 
 		var atlasManager = MinecraftClient.getInstance().getAtlasManager();
-		var layer = net.minecraft.client.render.RenderLayer.getEntityCutoutNoCull(GUI_ATLAS);
+		RenderLayer layer = RenderLayers.entityCutoutNoCull(GUI_ATLAS);
 
 		var containerSprite = atlasManager.getSprite(HEART_CONTAINER);
 		var fullSprite = atlasManager.getSprite(HEART_FULL);
