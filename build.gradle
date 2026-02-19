@@ -39,6 +39,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation "maven.modrinth:cactus:0.12"
+
+	modCompileOnly "maven.modrinth:vulkanmod:${project.vulkanmod_version}"
 }
 
 processResources {
