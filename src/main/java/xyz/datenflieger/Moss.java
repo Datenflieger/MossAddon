@@ -5,6 +5,7 @@ import com.dwarslooper.cactus.client.addon.v2.RegistryBus;
 import com.dwarslooper.cactus.client.feature.module.Category;
 import com.dwarslooper.cactus.client.systems.params.PlaceholderHandler;
 import com.dwarslooper.cactus.client.util.game.InputTimeTracker;
+import com.dwarslooper.cactus.client.feature.module.Module;
 import net.minecraft.item.Items;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
@@ -29,9 +30,9 @@ public class Moss implements ICactusAddon {
 		// Register our custom category first
 		bus.register(Category.class, (list, ctx) -> list.add(MOSS_ADDON_CATEGORY));
 		// Register our module inside the custom category
-		bus.register(com.dwarslooper.cactus.client.feature.module.Module.class, ctx -> new BrandNameChanger(MOSS_ADDON_CATEGORY));
-		bus.register(com.dwarslooper.cactus.client.feature.module.Module.class, ctx -> new ArrowTrails(MOSS_ADDON_CATEGORY));
-		bus.register(com.dwarslooper.cactus.client.feature.module.Module.class, ctx -> new DamageIndicator(MOSS_ADDON_CATEGORY));
+		bus.register(Module.class, ctx -> new BrandNameChanger(MOSS_ADDON_CATEGORY));
+		bus.register(Module.class, ctx -> new ArrowTrails(MOSS_ADDON_CATEGORY));
+		bus.register(Module.class, ctx -> new DamageIndicator(MOSS_ADDON_CATEGORY));
 
 		bus.register(PlaceholderHandler.PlaceholderRegistration.class, (list, ctx) -> {
 			list.add(new PlaceholderHandler.PlaceholderRegistration("input.cps.left", cpsPlaceholder(GLFW.GLFW_MOUSE_BUTTON_LEFT)));
