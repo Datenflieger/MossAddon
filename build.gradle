@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version "${loom_version}"
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
 	id 'maven-publish'
 }
 
@@ -31,14 +31,12 @@ repositories {
 
 dependencies {
 	// To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	minecraft("com.mojang:minecraft:${minecraft_version}")
 
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	implementation("net.fabricmc:fabric-loader:${loader_version}")
+	implementation("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
 
-	modImplementation "maven.modrinth:cactus:0.12.3"
+	implementation "maven.modrinth:cactus:0.13"
 }
 
 processResources {
@@ -50,7 +48,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+	it.options.release = 25
 }
 
 java {
@@ -70,6 +68,7 @@ jar {
 		rename { "${it}_${inputs.properties.archivesName}"}
 	}
 }
+
 
 def releaseDir = layout.buildDirectory.dir("release")
 def releaseBaseName = "${project.archives_base_name}-${project.mod_version}+mc${project.minecraft_version}".toString()

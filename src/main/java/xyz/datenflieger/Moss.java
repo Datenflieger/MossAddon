@@ -6,7 +6,7 @@ import com.dwarslooper.cactus.client.feature.module.Category;
 import com.dwarslooper.cactus.client.systems.params.PlaceholderHandler;
 import com.dwarslooper.cactus.client.util.game.InputTimeTracker;
 import com.dwarslooper.cactus.client.feature.module.Module;
-import net.minecraft.item.Items;
+import net.minecraft.world.item.Items;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class Moss implements ICactusAddon {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	private static final Category MOSS_ADDON_CATEGORY = new Category("mossaddon", Items.MOSS_BLOCK.getDefaultStack());
+	private static final Category MOSS_ADDON_CATEGORY = new Category("mossaddon", Items.MOSS_BLOCK);
 
 	@Override
 	public void onInitialize(RegistryBus bus) {
@@ -33,18 +33,5 @@ public class Moss implements ICactusAddon {
 		bus.register(Module.class, ctx -> new BrandNameChanger(MOSS_ADDON_CATEGORY));
 		bus.register(Module.class, ctx -> new ArrowTrails(MOSS_ADDON_CATEGORY));
 		bus.register(Module.class, ctx -> new DamageIndicator(MOSS_ADDON_CATEGORY));
-
-		bus.register(PlaceholderHandler.PlaceholderRegistration.class, (list, ctx) -> {
-			list.add(new PlaceholderHandler.PlaceholderRegistration("input.cps.left", cpsPlaceholder(GLFW.GLFW_MOUSE_BUTTON_LEFT)));
-			list.add(new PlaceholderHandler.PlaceholderRegistration("input.cps.right", cpsPlaceholder(GLFW.GLFW_MOUSE_BUTTON_RIGHT)));
-		});
-	}
-
-	private static PlaceholderHandler.Placeholder cpsPlaceholder(int mouseButton) {
-		return new PlaceholderHandler.StaticPlaceholderValue(
-			() -> InputTimeTracker.INSTANCE.getInputsThisSecond(mouseButton),
-			"0",
-			() -> true
-		);
 	}
 }

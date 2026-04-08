@@ -7,8 +7,7 @@
 		"ArrowEntityTickMixin",
 		"LivingEntityRenderStateMixin",
 		"DamageIndicatorEntityRendererMixin",
-		"DamageIndicatorLivingEntityRendererMixin",
-		"DamageIndicatorPlayerRendererMixin"
+		"DamageIndicatorLivingEntityRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,21 +1,18 @@
 package xyz.datenflieger.mixin;
 
 import java.awt.Color;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.projectile.ArrowEntity;
-import net.minecraft.particle.DustParticleEffect;
-import net.minecraft.util.math.ColorHelper;
-import net.minecraft.world.World;
-import org.joml.Vector3f;
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.util.ARGB;
+import net.minecraft.world.entity.projectile.arrow.Arrow;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import xyz.datenflieger.modules.ArrowTrails;
 
-@Mixin(ArrowEntity.class)
+@Mixin(Arrow.class)
 public abstract class ArrowEntityTickMixin {
 
     @Inject(method = "tick", at = @At("HEAD"))
@@ -23,17 +20,18 @@ public abstract class ArrowEntityTickMixin {
         ArrowTrails module = ArrowTrails.INSTANCE;
         if (module == null || !module.active()) return;
 
-        ArrowEntity arrow = (ArrowEntity) (Object) this;
-        World world = arrow.getEntityWorld();
-        if (!world.isClient()) return;
+        Arrow arrow = (Arrow) (Object) this;
+        Level world = arrow.level();
+        if (!world.isClientSide()) return;
 
-        if ((Boolean) module.ownOnly.get() && arrow.getOwner() != null && MinecraftClient.getInstance().player != null) {
-            if (arrow.getOwner().getId() != MinecraftClient.getInstance().player.getId()) {
+        Minecraft minecraft = Minecraft.getInstance();
+        if ((Boolean) module.ownOnly.get() && arrow.getOwner() != null && minecraft.player != null) {
+            if (arrow.getOwner().getId() != minecraft.player.getId()) {
                 return;
             }
         }
 
-        double speed = arrow.getVelocity().length();
+        double speed = arrow.getDeltaMovement().length();
         double minSpeed = ((Integer) module.minSpeed100.get()) / 100.0;
         if (speed < minSpeed) return;
 
@@ -48,21 +46,16 @@ public abstract class ArrowEntityTickMixin {
             rgb = module.color.get().value();
         }
 
-        Vector3f vec = new Vector3f(rgb.getRed() / 255.0f, rgb.getGreen() / 255.0f, rgb.getBlue() / 255.0f);
-        int packedColor = ColorHelper.getArgb(
-            (int)(vec.x * 255.0f),
-            (int)(vec.y * 255.0f),
-            (int)(vec.z * 255.0f)
-        );
-        DustParticleEffect effect = new DustParticleEffect(packedColor, size);
+        int packedColor = ARGB.color(rgb.getRed(), rgb.getGreen(), rgb.getBlue());
+        DustParticleOptions effect = new DustParticleOptions(packedColor, size);
 
         int density = (Integer) module.particleDensity.get();
         double spread = ((Integer) module.offsetSpread1000.get()) / 1000.0;
         for (int i = 0; i < density; i++) {
-            double xOffset = (world.random.nextDouble() - 0.5) * spread;
-            double yOffset = (world.random.nextDouble() - 0.5) * spread;
-            double zOffset = (world.random.nextDouble() - 0.5) * spread;
-            world.addParticleClient(
+            double xOffset = (arrow.getRandom().nextDouble() - 0.5) * spread;
+            double yOffset = (arrow.getRandom().nextDouble() - 0.5) * spread;
+            double zOffset = (arrow.getRandom().nextDouble() - 0.5) * spread;
+            world.addParticle(
                 effect,
                 arrow.getX() + xOffset,
                 arrow.getY() + yOffset,

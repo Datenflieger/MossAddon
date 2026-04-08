@@ -27,12 +27,12 @@ public class ArrowTrails extends Module {
         INSTANCE = this;
         this.sgVisual = this.settings.buildGroup("visual");
         this.rainbow = this.sgVisual.add(new BooleanSetting("rainbow", true));
-        this.rgbSpeed = this.sgVisual.add(new IntegerSetting("rgbSpeed", 100).setMin(1).setMax(2000)).visibleIf(() -> (Boolean) this.rainbow.get());
-        this.particleDensity = this.sgVisual.add(new IntegerSetting("particleDensity", 3).setMin(1).setMax(20));
-        this.particleSize10 = this.sgVisual.add(new IntegerSetting("particleSize10", 10).setMin(1).setMax(50));
+        this.rgbSpeed = this.sgVisual.add(new IntegerSetting("rgbSpeed", 100).min(1).max(2000)).visibleIf(() -> (Boolean) this.rainbow.get());
+        this.particleDensity = this.sgVisual.add(new IntegerSetting("particleDensity", 3).min(1).max(20));
+        this.particleSize10 = this.sgVisual.add(new IntegerSetting("particleSize10", 10).min(1).max(50));
         this.color = this.sgVisual.add(new ColorSetting("color", new ColorSetting.ColorValue(new Color(0, 255, 127), false))).visibleIf(() -> !(Boolean) this.rainbow.get());
         this.ownOnly = this.sgVisual.add(new BooleanSetting("ownOnly", true));
-        this.offsetSpread1000 = this.sgVisual.add(new IntegerSetting("offsetSpread1000", 100).setMin(0).setMax(500));
-        this.minSpeed100 = this.sgVisual.add(new IntegerSetting("minSpeed100", 0).setMin(0).setMax(500));
+        this.offsetSpread1000 = this.sgVisual.add(new IntegerSetting("offsetSpread1000", 100).min(0).max(500));
+        this.minSpeed100 = this.sgVisual.add(new IntegerSetting("minSpeed100", 0).min(0).max(500));
     }
 }

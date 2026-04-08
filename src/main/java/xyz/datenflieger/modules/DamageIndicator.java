@@ -5,6 +5,7 @@ import com.dwarslooper.cactus.client.feature.module.Module;
 import com.dwarslooper.cactus.client.systems.config.settings.group.SettingGroup;
 import com.dwarslooper.cactus.client.systems.config.settings.impl.BooleanSetting;
 import com.dwarslooper.cactus.client.systems.config.settings.impl.EnumSetting;
+import com.dwarslooper.cactus.client.systems.config.settings.impl.IntegerSetting;
 import com.dwarslooper.cactus.client.systems.config.settings.impl.Setting;
 
 public class DamageIndicator extends Module {
@@ -21,6 +22,7 @@ public class DamageIndicator extends Module {
 	public final Setting<Boolean> includePlayers;
 	public final Setting<Boolean> includeOtherEntities;
 	public final Setting<DisplayType> displayType;
+	public final Setting<Integer> heartsYOffsetPx;
 
 	public DamageIndicator(Category category) {
 		super("damage_indicator", category, new Module.Options().set(Flag.HUD_LISTED, false));
@@ -31,5 +33,6 @@ public class DamageIndicator extends Module {
 		this.includePlayers = this.sgGeneral.add(new BooleanSetting("includePlayers", true));
 		this.includeOtherEntities = this.sgGeneral.add(new BooleanSetting("includeOtherEntities", true));
 		this.displayType = this.sgGeneral.add(new EnumSetting<>("displayType", DisplayType.Hearts));
+		this.heartsYOffsetPx = this.sgGeneral.add(new IntegerSetting("heartsYOffsetPx", 0).min(-40).max(80)).visibleIf(() -> this.displayType.get() == DisplayType.Hearts);
 	}
 }

@@ -1,9 +1,10 @@
 package xyz.datenflieger.mixin;
 
-import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.client.render.entity.state.EntityRenderState;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,13 +15,13 @@ import xyz.datenflieger.util.HealthRenderStateExtension;
 @Mixin(EntityRenderer.class)
 public abstract class DamageIndicatorEntityRendererMixin<T extends Entity, S extends EntityRenderState> {
 
-	@Inject(method = "updateRenderState(Lnet/minecraft/entity/Entity;Lnet/minecraft/client/render/entity/state/EntityRenderState;F)V", at = @At("TAIL"))
+	@Inject(method = "extractRenderState(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/entity/state/EntityRenderState;F)V", at = @At("TAIL"))
 	private void moss$storeHealth(T entity, S state, float tickDelta, CallbackInfo ci) {
 		if (!(entity instanceof LivingEntity living) || !(state instanceof HealthRenderStateExtension ext)) return;
 
 		DamageIndicator module = DamageIndicator.INSTANCE;
 		if (module == null || !module.active()) return;
-		boolean isPlayer = living instanceof net.minecraft.entity.player.PlayerEntity;
+		boolean isPlayer = living instanceof Player;
 		if (isPlayer && !module.includePlayers.get()) return;
 		if (!isPlayer && !module.includeOtherEntities.get()) return;
 

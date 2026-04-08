@@ -23,11 +23,11 @@
 		"moss.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.17.2",
-		"minecraft": "~1.21.11",
-		"java": ">=21",
+		"fabricloader": ">=0.18.2",
+		"minecraft": "~26.1",
+		"java": ">=25",
 		"fabric-api": "*",
-		"cactus": ">=0.12"
+		"cactus": ">=0.13"
 	},
 	"suggests": {
 		"another-mod": "*"
