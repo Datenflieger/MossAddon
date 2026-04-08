@@ -1,6 +1,6 @@
 ![Banner](https://i.imgur.com/lEsZNHy.jpeg)
 
-A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft 1.21.11. It adds a new category and extra utility/visual modules.
+A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft Latest. It adds a new category and extra utility/visual modules.
 
 ## Features
 
@@ -24,15 +24,15 @@ A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft
 
 ## Prerequisites
 
-- Minecraft: 1.21.11
+- Minecraft
 - Fabric Loader
-- Fabric API (matching Minecraft 1.21.11)
+- Fabric API 
 - Cactus Mod
 
 ## Installation
 
 1. Install Fabric Loader (if you don't have it yet).
-2. Install Fabric API (matching Minecraft 1.21.11).
+2. Install Fabric API.
 3. Install Cactus Mod.
 4. Download the __Moss Addon__ JAR from the repository __Releases__.
 5. Put all JARs into your `mods/` folder.
