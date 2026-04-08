@@ -1,49 +1,63 @@
-![Banner](https://i.imgur.com/lEsZNHy.jpeg)
+# Moss Addon
 
-A lightweight Fabric addon for [Cactus Mod](https://cactusmod.xyz/) on Minecraft Latest. It adds a new category and extra utility/visual modules.
+[![Stars](https://img.shields.io/github/stars/Datenflieger/MossAddon?style=for-the-badge)](#)
+[![Minecraft](https://img.shields.io/badge/Minecraft-Latest-green?style=for-the-badge)](#)
+[![Loader](https://img.shields.io/badge/Loader-Fabric-blue?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-GNU-E66B2A?style=for-the-badge)](./LICENSE)
 
-## Features
+<p>
+Moss Addon extends <a href="https://cactusmod.xyz/">Cactus Mod</a> with additional modules focused on visual feedback, customization, and lightweight utility.
+</p>
 
-- __Brand Name Changer__
-  - Change the client brand reported by the game (e.g. `lunarclient`, `fabric`, `forge`, `vanilla`, custom).
-  - Toggle the module and type your brand in the setting `Brand`.
-  - Implemented via a Mixin to `ClientBrandRetriever#getClientModName`.
+## Feature Overview
 
-- __Arrow Trails__
-  - Colorful particle trails following flying arrows.
-  - Settings: Rainbow mode, RGB speed, fixed color, particles per tick, particle size, only own arrows, offset spread, minimum speed.
+Moss Addon introduces a dedicated category inside Cactus and expands it with modular features.
 
-- __Damage Indicator__
-  - Nice Damage Indicator
-- more comming soon
+### Modules
 
-## Download
+- **Brand Name Changer**
+  - Override client brand (`fabric`, `forge`, `lunarclient`, `vanilla`, custom)
+  - Uses `ClientBrandRetriever#getClientModName`
 
-- Download the built JAR from the repository __Releases__.
-- Alternatively, you can build the mod yourself (see the section "For Advanced/Technical").
+- **Arrow Trails**
+  - Particle trails following arrows  
+  - Rainbow mode + RGB speed  
+  - Custom color, size, density  
+  - Only own arrows option  
+  - Speed-based rendering  
 
-## Prerequisites
+- **Damage Indicator**
+  - Clean damage display  
+  - Lightweight rendering  
 
-- Minecraft
-- Fabric Loader
-- Fabric API 
-- Cactus Mod
+- More coming soon  
+
+<hr>
+
+## Addon Concept
+
+Moss follows the same philosophy as Cactus: modular, extensible, and minimal.
+
+- Adds a new module category  
+- Integrates directly into Cactus UI  
+- Designed to stay lightweight without unnecessary features  
+- Fully compatible with other addons  
+
+<hr>
 
 ## Installation
 
-1. Install Fabric Loader (if you don't have it yet).
-2. Install Fabric API.
-3. Install Cactus Mod.
-4. Download the __Moss Addon__ JAR from the repository __Releases__.
-5. Put all JARs into your `mods/` folder.
-6. Start Minecraft.
+1. Install Fabric Loader  
+2. Install Fabric API  
+3. Install Cactus Mod  
+4. Download Moss Addon JAR  
+5. Put everything into `mods/`  
+6. Start Minecraft  
 
-## In‑game usage
+<hr>
 
-1. Open the Cactus Mod modules UI.
-2. Switch to the __Moss Addon__ category.
-3. Enable what you want
+## Usage
 
-## License
-
-This project is licensed under the terms of the license file included in this repository (`LICENSE`).
+- Open Cactus GUI  
+- Navigate to **Moss Addon** category  
+- Enable modules  
