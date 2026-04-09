@@ -3,7 +3,7 @@
 [![Stars](https://img.shields.io/github/stars/Datenflieger/MossAddon?style=for-the-badge)](#)
 [![Minecraft](https://img.shields.io/badge/Minecraft-Latest-green?style=for-the-badge)](#)
 [![Loader](https://img.shields.io/badge/Loader-Fabric-blue?style=for-the-badge)](#)
-[![License](https://img.shields.io/badge/License-GNU-E66B2A?style=for-the-badge)](./LICENSE)
+[![License](https://img.shields.io/badge/License-CC01.0-E66B2A?style=for-the-badge)](./LICENSE)
 
 <p>
 Moss Addon extends <a href="https://cactusmod.xyz/">Cactus Mod</a> with additional modules focused on visual feedback, customization, and lightweight utility.
